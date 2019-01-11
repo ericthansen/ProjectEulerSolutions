@@ -21,7 +21,7 @@ def collatz(x):
     while curr!=1:
         curr = curr/2 if (curr%2==0) else 3*curr + 1
         length += 1
-    return length
+    return length, x
 print(collatz(1000001))
 
 def search(cap):
@@ -29,6 +29,10 @@ def search(cap):
     for i in range(1,cap):
         if(i%10000==0):
             print('i',i)
-        maxlen=max(maxlen,collatz(i))
-    return maxlen
+        nextL,nextX=collatz(i)
+        if(nextL>maxlen):
+            maxlen=nextL
+            maxX=nextX
+        #maxlen=max(maxlen,collatz(i))
+    return maxlen, maxX
 print(search(10**6+1))
