@@ -35,7 +35,7 @@ for den in range(10,100):
             frac=None
         if(frac==f.Fraction(num,den)):
             a.append(frac)
-            #print('appending ',frac, num,'/',den)
+            print('appending ',frac, num,'/',den)
 #print('len(a) is',len(a))
 p=f.Fraction(1,1)
 for i in range(len(a)):
